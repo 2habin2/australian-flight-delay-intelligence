@@ -216,3 +216,37 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---------------------------------------------------------
+# Project data
+# ---------------------------------------------------------
+
+# Ignore downloaded raw datasets.
+# These files can be downloaded again from the original source.
+data/raw/*
+
+# Keep the placeholder file so the raw folder appears on GitHub.
+!data/raw/.gitkeep
+
+# Ignore generated and processed datasets.
+# These files should be reproducible using our Python pipeline.
+data/processed/*
+
+# Keep the placeholder file so the processed folder appears on GitHub.
+!data/processed/.gitkeep
+
+
+# ---------------------------------------------------------
+# Local configuration and secrets
+# ---------------------------------------------------------
+
+# Never upload API keys, passwords, or environment variables.
+.env
+
+
+# ---------------------------------------------------------
+# macOS
+# ---------------------------------------------------------
+
+# Ignore metadata files automatically created by macOS.
+.DS_Store
