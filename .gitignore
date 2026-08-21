@@ -250,3 +250,7 @@ data/processed/*
 
 # Ignore metadata files automatically created by macOS.
 .DS_Store
+
+
+# Generated model artifacts
+models/*.joblib
