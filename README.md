@@ -92,6 +92,7 @@ Future-period evaluation
 | `src/build_features.py` | Creates the modelling target, calendar variables and historical lag features. |
 | `src/train_model.py` | Trains the selected Gradient Boosting model using data through December 2024. |
 | `src/evaluate_model.py` | Evaluates the trained model on the reserved January 2025 to June 2026 test period. |
+| `src/predict.py` | Generates a next-month route-level departure delay forecast using the trained model and latest available historical data. |
 
 Generated processed datasets and trained model artifacts are excluded from version control because they can be reproduced from the project pipeline.
 
@@ -230,6 +231,7 @@ australian-flight-delay-intelligence/
 │   ├── build_features.py
 │   ├── train_model.py
 │   └── evaluate_model.py
+│   └── predict.py
 ├── tests/
 ├── .gitignore
 ├── README.md
@@ -265,6 +267,18 @@ python src/evaluate_model.py
 ```
 
 The final command evaluates the trained model against the reserved January 2025 to June 2026 test period.
+
+### Generate a Future Forecast
+
+After training the model, run the interactive prediction interface:
+
+```bash
+python src/predict.py
+```
+
+The script automatically identifies the next forecastable month from the latest available historical data and derives the required lag features from previous observations.
+
+For example, with historical data available through June 2026, the script generates a July 2026 forecast after the user enters an airline and directional route.
 
 ## Technologies
 
